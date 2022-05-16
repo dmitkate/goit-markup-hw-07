@@ -15,104 +15,84 @@
     align-items: center;
 }
 
-.main-nav-parts {
+.navigation {
     margin-left: 93px;
     display: flex;
 }
 
-.main-nav-contact {
+.nav-contact {
     display: flex;
     margin-left: auto;
+    .nav-contact__link{
+        align-items: center;
+        display: flex;
+    }
 
 }
 
-.main-nav-contact .out-navigation {
-    align-items: center;
-    display: flex;
-}
 
-.logo {
-    display: inline;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 700;
-    font-size: 26px;
-    line-height: 1.19;
-    letter-spacing: 0.03em;
-    color: var(--just-blck);
-    text-decoration: none;
 
-}
-
-.logo-studio-color {
-    color: var(--accent);
-}
-
-.navigation {
+.navigation__link {
     color: var(--nav-black);
     font-weight: 500;
     display: block;
     text-decoration: none;
     padding-bottom: 32px;
     padding-top: 32px;
-
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover,
+    &:focus{
+        color: var(--accent);
+    }
 
 }
 
-.main-nav-parts li,
-.main-nav-contact li {
+.navigation li,
+.nav-contact li {
     margin-right: 50px;
+    &:last-child{margin-right: 0;}
 }
 
-.main-nav-parts li:last-child,
-.main-nav-contact li:last-child {
-    margin-right: 0;
-}
 
-.navigation:hover,
-.navigation:focus,
-.out-navigation:hover,
-.out-navigation:focus,
-.footer-navigation:hover,
-.footer-navigation:focus {
-    color: var(--accent);
-}
-
-.out-navigation:hover .ico-contact,
-.out-navigation:focus .ico-contact {
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
 
 .current {
     color: var(--accent);
     position: relative;
+    &::after {
+        content: '';
+        display: block;
+        background-color: var(--accent);
+        width: 100%;
+        height: 4px;
+        border-radius: 2px;
+        position: absolute;
+        bottom: 0;
+    
+    }
 }
 
-.current::after {
-    content: '';
-    display: block;
-    background-color: var(--accent);
-    width: 100%;
-    height: 4px;
-    border-radius: 2px;
-    position: absolute;
-    bottom: 0;
 
-}
 
-.out-navigation {
+.nav-contact__link {
     color: var(--adress-color);
     font-weight: 500;
     text-decoration: none;
     display: block;
     padding-bottom: 32px;
     padding-top: 32px;
-
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
+    &:hover,
+    &:focus{
+        color: var(--accent);
+    }
+    
+    &:hover .nav-contact__ico,
+    &:focus .nav-contact__ico {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
 }
 
-.ico-contact {
+.nav-contact__ico {
     margin-right: 10px;
     align-items: center;
     fill: currentColor;
